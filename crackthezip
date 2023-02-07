@@ -5,10 +5,10 @@ from tqdm import tqdm
 version="""1.0
 """
 logo="""\a\a\33[32;1m
-▛▀▖      ▐    ▀▛▘▌     ▀▀▌▗
-▙▄▘▙▀▖▌ ▌▜▀ ▞▀▖▌ ▛▀▖▞▀▖ ▞ ▄ ▛▀▖
-▌ ▌▌  ▌ ▌▐ ▖▛▀ ▌ ▌ ▌▛▀ ▞  ▐ ▙▄▘
-▀▀ ▘  ▝▀▘ ▀ ▝▀▘▘ ▘ ▘▝▀▘▀▀▘▀▘▌\33[0m
+▞▀▖         ▌ ▀▛▘▌     ▀▀▌▗
+▌  ▙▀▖▝▀▖▞▀▖▌▗▘▌ ▛▀▖▞▀▖ ▞ ▄ ▛▀▖
+▌ ▖▌  ▞▀▌▌ ▖▛▚ ▌ ▌ ▌▛▀ ▞  ▐ ▙▄▘
+▝▀ ▘  ▝▀▘▝▀ ▘ ▘▘ ▘ ▘▝▀▘▀▀▘▀▘▌\33[0m
 
 [1] Use Default Password
 [2] Use Custom Password
@@ -97,8 +97,9 @@ def custom():
         print("[x]Password not found, try onether wordlist...")
 msg="Hey Alienkrishn 👽🦚"
 def about():
-  abt=request.get("https://raw.githubusercontent.com/Anon4You/CrackTheZip/main/About.txt").text
-  print("abt")
+  abt=requests.get("https://raw.githubusercontent.com/Anon4You/CrackTheZip/main/About.txt").text
+  os.system("clear") 
+  print(\33[0;1mabt)
 
 if k=='0':
   t.start()
