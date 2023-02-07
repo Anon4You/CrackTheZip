@@ -45,7 +45,7 @@ Zip password cracker with custom
 password list V 1.0
 """
 
-
+os.system("clear")
 print(logo)
 stop = False
 
