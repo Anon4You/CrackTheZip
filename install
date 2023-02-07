@@ -1,14 +1,16 @@
 #!/bin/bash
 echo $'\e[32;1m'"---installing upgrade"$'\e[0m'
 apt update && apt upgrade -y
-echo $'\e[32;1m'"---installing python figlet toilet"$'\e[0m'
-apt install python figlet toilet -y
+echo $'\e[32;1m'"---installing python figlet toilet crunch"$'\e[0m'
+apt install python figlet toilet crunch -y
 pip install requests > /dev/null 2>&1
 pip install tqdm > /dev/null 2>&1
 echo $'\e[32;1m'"---installing crackthezip"$'\e[0m'
 curl -LO https://raw.githubusercontent.com/Anon4You/CrackTheZip/main/crackthezip
 mv crackthezip $PATH
 chmod 777 $PATH/crackthezip
+echo generating password... 
+crunch 4 4 -f $PREFIX/share/crunch/charset.lst mixalpha-numeric -o .pass.txt > /dev/null 2>&1 
 clear
 figlet -f smblock Installed
 echo now you can run the tool
