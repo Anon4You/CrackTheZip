@@ -123,5 +123,5 @@ elif k=='4':
 elif k=='3':
   os.system(f"""xdg-open 'https://wa.me/+919832647808/?text={msg}'""") 
 else:
-  os.system("brutethezip")
+  os.system("crackthezip")
 
