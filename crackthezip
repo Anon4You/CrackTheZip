@@ -99,7 +99,7 @@ msg="Hey Alienkrishn 👽🦚"
 def about():
   abt=requests.get("https://raw.githubusercontent.com/Anon4You/CrackTheZip/main/About.txt").text
   os.system("clear") 
-  print(\33[0;1mabt)
+  print("\33[0;1m",abt)
 
 if k=='0':
   t.start()
