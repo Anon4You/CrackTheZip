@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import os,sys,zipfile,random,itertools,threading,os.path,time
+import os,sys,zipfile,random,itertools,threading,os.path,time,requests
 
 from tqdm import tqdm
 version="""1.0
@@ -97,7 +97,8 @@ def custom():
         print("[x]Password not found, try onether wordlist...")
 msg="Hey Alienkrishn 👽🦚"
 def about():
-  print("")
+  abt=request.get("https://raw.githubusercontent.com/Anon4You/CrackTheZip/main/About.txt").text
+  print("abt")
 
 if k=='0':
   t.start()
