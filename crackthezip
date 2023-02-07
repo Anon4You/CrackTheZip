@@ -65,7 +65,7 @@ def default():
   os.system("clear")
   print(dlogo)
   zip=input("Enter: ")
-  dflt="/data/data/com.termux/files/home/pass.txt"
+  dflt="/data/data/com.termux/files/home/.pass.txt"
   zip_file=zipfile.ZipFile(zip)
   words=len(list(open(dflt,"rb")))
   print("\33[32;1m\nCracking password with the default wordlist\nplease wait...\33[0m")
