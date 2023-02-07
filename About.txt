@@ -1,0 +1,20 @@
+So it's a very simple and easy
+Zipfile password Bruteforce script
+Written in python3 
+
+The tool is only available for termux
+
+Tested on termux
+
+it has some awesome Features like
+
+1~ You can use default password list for attacking
+
+2~ you can add your own wordlist
+
+3 if you're having any problem subscribe to my
+  My YouTube channel youtube.com/@AlienkrishnOrg
+
+Or you can msg me directly I'll help you 😎😎
+
+Try my other tools to... 
