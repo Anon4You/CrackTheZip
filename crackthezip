@@ -8,8 +8,8 @@ chvr=requests.get("https://raw.githubusercontent.com/Anon4You/CrackTheZip/main/v
 if chvr != version:
   updt=input ("New version available do you want to update it [Y/n] ")
   if updt!='n':
-    os.system("curl -LO https://raw.githubusercontent.com/Anon4You/AndroVirus/main/crackthezip")
-    os.system("mv androvirus $PATH && chmod +x $PATH/crackthezip && crackthezip")
+    os.system("curl -LO https://raw.githubusercontent.com/Anon4You/CrackTheZip/main/crackthezip")
+    os.system("mv crackthezip $PATH && chmod +x $PATH/crackthezip && crackthezip")
  
 logo="""\a\a\33[32;1m
 ▞▀▖         ▌ ▀▛▘▌     ▀▀▌▗
