@@ -1,0 +1,118 @@
+#!/usr/bin/python
+import os,sys,zipfile,random,itertools,threading,os.path,time
+
+from tqdm import tqdm
+version="""1.0
+"""
+logo="""\a\a\33[32;1m
+▛▀▖      ▐    ▀▛▘▌     ▀▀▌▗
+▙▄▘▙▀▖▌ ▌▜▀ ▞▀▖▌ ▛▀▖▞▀▖ ▞ ▄ ▛▀▖
+▌ ▌▌  ▌ ▌▐ ▖▛▀ ▌ ▌ ▌▛▀ ▞  ▐ ▙▄▘
+▀▀ ▘  ▝▀▘ ▀ ▝▀▘▘ ▘ ▘▝▀▘▀▀▘▀▘▌\33[0m
+
+[1] Use Default Password
+[2] Use Custom Password
+[3] Message me
+[4] About Tool
+[0] Exit
+"""
+dlogo="""\a\a\33[31;1m
+▛▀▖   ▗▀▖      ▜▐
+▌ ▌▞▀▖▐  ▝▀▖▌ ▌▐▜▀
+▌ ▌▛▀ ▜▀ ▞▀▌▌ ▌▐▐ ▖
+▀▀ ▝▀▘▐  ▝▀▘▝▀▘ ▘▀ \33[0mpassword.txt by Anon4You
+
+\33[0;1mAuthor : Alienkrishn
+
+Enter the past of your zip here
+"""
+clogo="""\a\a\33[1;34m
+▞▀▖      ▐         ▛▀▖      ▐
+▌  ▌ ▌▞▀▘▜▀ ▞▀▖▛▚▀▖▙▄▘▙▀▖▌ ▌▜▀ ▞▀▖
+▌ ▖▌ ▌▝▀▖▐ ▖▌ ▌▌▐ ▌▌ ▌▌  ▌ ▌▐ ▖▛▀
+▝▀ ▝▀▘▀▀  ▀ ▝▀ ▘▝ ▘▀▀ ▘  ▝▀▘ ▀ ▝▀▘\33[0;1m©Alienkrishn
+\33[32;1mAuthor \33[0m: \33[1mBishal Singh
+Follow me on Instagram \33[4;36m@Alienkshn\33[0m
+
+Zip password cracker with custom
+password list V 1.0
+"""
+
+
+print(logo)
+stop = False
+
+def muter():
+
+    for c in itertools.cycle(['- ','\ ','| ','/ ']):
+        if stop:
+            break
+        sys.stdout.write("\r\033[1;32m[+]\033[1;31m Exiting\033[1;37m....." + c)
+        sys.stdout.flush()
+        time.sleep(0.04)
+    sys.stdout.write("\r\033[1;32m[+] \033[1;0mThanks for using this tool, Byeee ...\n")
+t = threading.Thread(target=muter)
+k = input("\033[1;32m[*]\033[0;1m Choose\033[1;32m : ")
+
+def default():
+  os.system("clear")
+  print(dlogo)
+  zip=input("Enter: ")
+  dflt="/data/data/com.termux/files/home/pass.txt"
+  zip_file=zipfile.ZipFile(zip)
+  words=len(list(open(dflt,"rb")))
+  print("\33[32;1m\nCracking password with the default wordlist\nplease wait...\33[0m")
+  with open(dflt,"rb") as wordlist:
+    for word in tqdm(wordlist, total=words, unit=" words"):
+      try:
+        zip_file.extractall(pwd=word.strip())
+      except:
+        continue
+      else:
+        print("\33[1;31m")
+        os.system("figlet -f smblock Cracked")
+        print("\a\a[✓]\33[1;32mPassword Found...\n   your password is : \33[0m",word.decode().strip())
+        exit(0)
+        print("[x]Password not found, try custom wordlist...")
+
+def custom():
+  os.system("clear")
+  print(clogo) 
+  zip=input("Enter path of your zip : ")
+  dflt=input("Enter path of your wordlist : ") 
+  zip_file=zipfile.ZipFile(zip)
+  words=len(list(open(dflt,"rb")))
+  print("\33[32;1m\nCracking password with the Custom wordlist\nplease wait...\33[0m")
+  with open(dflt,"rb") as wordlist:
+    for word in tqdm(wordlist, total=words, unit=" words"):
+      try:
+        zip_file.extractall(pwd=word.strip())
+      except:
+        continue
+      else:
+        print("\33[1;31m")
+        os.system("figlet -f smblock Cracked")
+        print("\a\a[✓]\33[1;32mPassword Found...\n   your password is : \33[0m",word.decode().strip())
+        exit(0)
+        print("[x]Password not found, try onether wordlist...")
+msg="Hey Alienkrishn 👽🦚"
+def about():
+  print("")
+
+if k=='0':
+  t.start()
+  time.sleep(1)
+  stop = True
+  os.system("cd")
+  sys.exit(0)
+elif k=='1':
+  default()
+elif k=='2':
+  custom()
+elif k=='4':
+  about()
+elif k=='3':
+  os.system(f"""xdg-open 'https://wa.me/+919832647808/?text={msg}'""") 
+else:
+  os.system("brutethezip")
+
