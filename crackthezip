@@ -31,7 +31,7 @@ dlogo="""\a\a\33[31;1m
 
 \33[0;1mAuthor : Alienkrishn
 
-Enter the past of your zip here
+Enter the path of your zip here
 """
 clogo="""\a\a\33[1;34m
 ▞▀▖      ▐         ▛▀▖      ▐
